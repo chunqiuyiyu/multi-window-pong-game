@@ -24,7 +24,7 @@ class WindowManager {
     })
 
     // event listener for when current window is about to ble closed
-    window.addEventListener('beforeunload', function (e) {
+    window.addEventListener('beforeunload', function () {
       let index = that.getWindowIndexFromId(that.#id)
 
       //remove this window from the list and update local storage
@@ -33,7 +33,7 @@ class WindowManager {
     })
   }
 
-  // check if theres any changes to the window list
+  // check if there's any changes to the window list
   #didWindowsChange(pWins, nWins) {
     if (pWins.length !== nWins.length) {
       return true
@@ -137,9 +137,9 @@ class WindowManager {
     return this.#winData
   }
 
-  getThisWindowID() {
-    return this.#id
-  }
+  // getThisWindowID() {
+  //   return this.#id
+  // }
 }
 
 export default WindowManager
